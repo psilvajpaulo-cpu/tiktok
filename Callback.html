@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>OAuth Callback</h2>
+
+<pre id="result"></pre>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("result").textContent =
+JSON.stringify(Object.fromEntries(params), null, 2);
+</script>
+
+</body>
+</html>
