@@ -1,330 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ClipFlow Automation</title>
-  <link rel="icon" type="image/png" href="icon.png">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #222;
-    }
+    <meta charset="UTF-8">
 
-    .page {
-      display: none;
-      min-height: 100vh;
-      padding: 40px;
-      box-sizing: border-box;
-    }
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    .active {
-      display: block;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      background: white;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
+    <title>ClipFlow Automation</title>
 
-    .center {
-      text-align: center;
-    }
+    <meta name="description"
+        content="ClipFlow Automation helps creators publish videos quickly and securely.">
 
-    .logo {
-      width: 90px;
-      margin-bottom: 20px;
-    }
+    <link rel="stylesheet" href="css/style.css">
 
-    h1 {
-      margin-bottom: 10px;
-    }
+    <link rel="stylesheet" href="css/responsive.css">
 
-    .subtitle {
-      color: #666;
-      margin-bottom: 30px;
-    }
+    <link rel="stylesheet" href="css/animations.css">
 
-    .btn {
-      background: #111;
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    .btn:hover {
-      opacity: 0.9;
-    }
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .oauth-box {
-      max-width: 500px;
-      margin: auto;
-      text-align: center;
-      padding: 40px;
-      border: 1px solid #ddd;
-      border-radius: 16px;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    .account-box {
-      background: #f7f7f7;
-      padding: 16px;
-      border-radius: 10px;
-      margin-bottom: 25px;
-    }
-
-    .video-card {
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 20px;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .thumb {
-      width: 220px;
-      height: 120px;
-      background: #ddd;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #666;
-      font-size: 14px;
-    }
-
-    .progress {
-      width: 100%;
-      background: #ddd;
-      border-radius: 999px;
-      overflow: hidden;
-      height: 24px;
-      margin-top: 20px;
-    }
-
-    .bar {
-      width: 85%;
-      height: 100%;
-      background: #111;
-    }
-
-    .success {
-      color: green;
-      font-size: 22px;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-
-    .sandbox-video {
-      width: 320px;
-      height: 560px;
-      background: #111;
-      border-radius: 24px;
-      margin: auto;
-      position: relative;
-      overflow: hidden;
-      color: white;
-    }
-
-    .sandbox-video::before {
-      content: 'TikTok Sandbox';
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    .sandbox-caption {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-      font-size: 15px;
-    }
-
-    .nav {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .nav button {
-      margin: 5px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      background: #ddd;
-      cursor: pointer;
-    }
-  </style>
 </head>
+
 <body>
 
-  <!-- PAGE 1 -->
-  <section class="page active" id="page1">
-    <div class="container center">
-      <img src="icon.png" class="logo">
-      <h1>ClipFlow Automation</h1>
-      <p class="subtitle">Automated TikTok Publishing Platform</p>
+<header>
 
-      <button class="btn" onclick="nextPage(2)">
-        Connect TikTok
-      </button>
-    </div>
-  </section>
+<div class="container">
 
-  <!-- PAGE 2 -->
-  <section class="page" id="page2">
-    <div class="container">
-      <div class="oauth-box">
-        <img src="icon.png" class="logo">
-        <h2>TikTok Authorization</h2>
+<div class="logo">
 
-        <p>
-          ClipFlow Automation wants permission to:
-        </p>
+<h2>ClipFlow</h2>
 
-        <ul style="text-align:left; display:inline-block;">
-          <li>Access basic profile information</li>
-          <li>Publish videos to TikTok</li>
-        </ul>
+</div>
 
-        <br><br>
+<nav>
 
-        <button class="btn" onclick="nextPage(3)">
-          Authorize
-        </button>
-      </div>
-    </div>
-  </section>
+<ul>
 
-  <!-- PAGE 3 -->
-  <section class="page" id="page3">
-    <div class="container">
+<li><a href="#home">Home</a></li>
 
-      <h1>Dashboard</h1>
+<li><a href="#features">Features</a></li>
 
-      <div class="account-box">
-        Connected account: <strong>@demo_user</strong><br>
-        Status: Connected successfully
-      </div>
+<li><a href="#how">How it Works</a></li>
 
-      <div class="video-card">
+<li><a href="#faq">FAQ</a></li>
 
-        <div class="thumb">
-          nature_video.mp4
-        </div>
+<li><a href="pages/contact.html">Contact</a></li>
 
-        <div>
-          <h3>Nature Relaxing Video</h3>
+</ul>
 
-          <p>
-            Caption:<br>
-            razão para pensar... siga para mais conteúdos assim!
-          </p>
+</nav>
 
-          <button class="btn" onclick="nextPage(4)">
-            Publish to TikTok
-          </button>
-        </div>
+<div class="buttons">
 
-      </div>
+<a href="pages/login.html" class="btn-outline">
 
-    </div>
-  </section>
+Login
 
-  <!-- PAGE 4 -->
-  <section class="page" id="page4">
-    <div class="container center">
+</a>
 
-      <h1>Uploading Video</h1>
+<a href="pages/dashboard.html" class="btn">
 
-      <p>
-        Uploading and processing content...
-      </p>
+Open Dashboard
 
-      <div class="progress">
-        <div class="bar"></div>
-      </div>
+</a>
 
-      <br>
+</div>
 
-      <button class="btn" onclick="nextPage(5)">
-        Continue
-      </button>
+</div>
 
-    </div>
-  </section>
+</header>
 
-  <!-- PAGE 5 -->
-  <section class="page" id="page5">
-    <div class="container center">
+<section class="hero" id="home">
 
-      <h1>Publishing Complete</h1>
+<div class="container hero-grid">
 
-      <div class="success">
-        Video published successfully
-      </div>
+<div class="hero-text">
 
-      <br><br>
+<h1>
 
-      <button class="btn" onclick="nextPage(6)">
-        Open TikTok Sandbox
-      </button>
+Automate your TikTok publishing workflow.
 
-    </div>
-  </section>
+</h1>
 
-  <!-- PAGE 6 -->
-  <section class="page" id="page6">
-    <div class="container center">
+<p>
 
-      <h1>TikTok Sandbox Preview</h1>
+ClipFlow Automation allows creators to upload videos,
 
-      <div class="sandbox-video" style="
-  background-image: url('thumb.png');
-  background-size: cover;
-  background-position: center;
-">
+manage publishing history,
 
-        <div class="sandbox-caption">
-          @demo_user<br><br>
-          razão para pensar... siga para mais conteúdos assim!
-        </div>
+and securely authorize their TikTok account through
 
-      </div>
+the official TikTok API.
 
-    </div>
-  </section>
+</p>
 
-  <div class="nav">
-    <button onclick="nextPage(1)">1</button>
-    <button onclick="nextPage(2)">2</button>
-    <button onclick="nextPage(3)">3</button>
-    <button onclick="nextPage(4)">4</button>
-    <button onclick="nextPage(5)">5</button>
-    <button onclick="nextPage(6)">6</button>
-  </div>
+<div class="hero-buttons">
 
-  <script>
-    function nextPage(page) {
-      document.querySelectorAll('.page').forEach(p => {
-        p.classList.remove('active');
-      });
+<a href="pages/login.html" class="btn">
 
-      document.getElementById('page' + page).classList.add('active');
-    }
-  </script>
+Get Started
+
+</a>
+
+<a href="#how" class="btn-outline">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<div class="card">
+
+<h3>Dashboard Preview</h3>
+
+<div class="status success">
+
+✔ TikTok Connected
+
+</div>
+
+<div class="upload">
+
+<p>Today's Upload</p>
+
+<div class="progress">
+
+<div class="bar"></div>
+
+</div>
+
+</div>
+
+<div class="stats">
+
+<div>
+
+<h4>12</h4>
+
+<span>Published</span>
+
+</div>
+
+<div>
+
+<h4>3</h4>
+
+<span>Scheduled</span>
+
+</div>
+
+<div>
+
+<h4>1</h4>
+
+<span>Pending</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="features" class="features">
+
+<div class="container">
+
+<h2>
+
+Platform Features
+
+</h2>
+
+<div class="cards">
+
+<div class="feature">
+
+<div class="icon">🎥</div>
+
+<h3>Video Upload</h3>
+
+<p>
+
+Upload MP4 videos ready for publishing.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="icon">🔒</div>
+
+<h3>Secure OAuth</h3>
+
+<p>
+
+Connect your TikTok account using the official OAuth authorization.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="icon">📅</div>
+
+<h3>Publishing History</h3>
+
+<p>
+
+Review every published video.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="icon">⚡</div>
+
+<h3>Fast Automation</h3>
+
+<p>
+
+Publish videos with just a few clicks.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="how" class="workflow">
+
+<div class="container">
+
+<h2>
+
+How It Works
+
+</h2>
+
+<div class="steps">
+
+<div class="step">
+
+<span>1</span>
+
+<h3>Login</h3>
+
+<p>
+
+Access your ClipFlow account.
+
+</p>
+
+</div>
+
+<div class="step">
+
+<span>2</span>
+
+<h3>Authorize TikTok</h3>
+
+<p>
+
+Connect your account through TikTok OAuth.
+
+</p>
+
+</div>
+
+<div class="step">
+
+<span>3</span>
+
+<h3>Select a Video</h3>
+
+<p>
+
+Upload your MP4 file.
+
+</p>
+
+</div>
+
+<div class="step">
+
+<span>4</span>
+
+<h3>Publish</h3>
+
+<p>
+
+Send the video using the official API.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<h2>
+
+Ready to automate your content?
+
+</h2>
+
+<p>
+
+Start using ClipFlow Automation today.
+
+</p>
+
+<a href="pages/login.html" class="btn">
+
+Launch Platform
+
+</a>
+
+</div>
+
+</section>
+
+<section id="faq" class="faq">
+
+<div class="container">
+
+<h2>
+
+Frequently Asked Questions
+
+</h2>
+
+<div class="faq-item">
+
+<h3>
+
+Is ClipFlow affiliated with TikTok?
+
+</h3>
+
+<p>
+
+No.
+
+ClipFlow uses the official TikTok API but is an independent application.
+
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>
+
+Do I need to authorize my account?
+
+</h3>
+
+<p>
+
+Yes.
+
+Every TikTok account must authorize access through OAuth.
+
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>
+
+Does ClipFlow store my TikTok password?
+
+</h3>
+
+<p>
+
+No.
+
+Authentication is performed exclusively through TikTok OAuth.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container footer">
+
+<div>
+
+<h3>ClipFlow Automation</h3>
+
+<p>
+
+Secure video publishing automation.
+
+</p>
+
+</div>
+
+<div>
+
+<ul>
+
+<li>
+
+<a href="pages/privacy.html">
+
+Privacy Policy
+
+</a>
+
+</li>
+
+<li>
+
+<a href="pages/terms.html">
+
+Terms of Service
+
+</a>
+
+</li>
+
+<li>
+
+<a href="pages/contact.html">
+
+Contact
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</footer>
+
+<script src="js/app.js"></script>
 
 </body>
+
 </html>
